@@ -1,0 +1,13 @@
+services:
+  python_app:
+    build: .
+    container_name: sheremet_nosql_2
+    command: tail -f /dev/null
+    volumes:
+      - .:/app
+      - model_cache:/root/.cache/huggingface 
+    tty: true
+    stdin_open: true
+
+volumes:
+  model_cache:

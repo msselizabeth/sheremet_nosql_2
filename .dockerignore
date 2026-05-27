@@ -1,0 +1,10 @@
+.env
+
+data/
+embeddings/
+model_cache/
+*.parquet
+*.npy
+*.zip
+
+.gitignore
