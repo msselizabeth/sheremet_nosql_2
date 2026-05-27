@@ -38,3 +38,7 @@ $\text{Cosine Similarity} = \frac{a \cdot b}{||a|| ||b||}$
 $\text{Cosine Similarity} = \frac{a \cdot b}{1} = a \cdot b = \text{Dot Product}$
 
 Тому для нормалізованих векторів ці дві метрики стають математично ідентичними. Вигідніше використовувати саме Dot Product для одиничних векторів, оскільки це економить обчислювальні ресурси бази даних на непотрібних операціях ділення.
+
+## Part 2(Pinecone Screenshot)
+
+![Pinecone Results](./Pincecone_Index.png)
