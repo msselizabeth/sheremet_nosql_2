@@ -16,16 +16,17 @@
 
 2. Чому для задачі пошуку по науковим текстам обрана модель `specter2_base`, а не універсальна `all-MiniLM-L6-v2`? Знайдіть картку моделі на HuggingFace і процитуйте, для яких задач вона навчена.
 
-Універсальні моделі навчаються на текстах загального призначення, а `specter2_base` створена спеціально для наукового домену, тому набагато краще розуміє академічний контекст. Згідно з карткою моделі на HuggingFace, вона навчена для таких форматів задач: 
-- Classification
-- Regression
-- Proximity (Retrieval)
-- Adhoc Search
-*It builds on the work done in SciRepEval: A Multi-Format Benchmark for Scientific Document Representations and we evaluate the trained model on this benchmark as well.*
+    Універсальні моделі навчаються на текстах загального призначення, а `specter2_base` створена спеціально для академічного контексту. Згідно з карткою моделі на HuggingFace, вона навчена для таких форматів задач: 
+    - Classification
+    - Regression
+    - Proximity (Retrieval)
+    - Adhoc Search
+      
+    *It builds on the work done in SciRepEval: A Multi-Format Benchmark for Scientific Document Representations and we evaluate the trained model on this benchmark as well.*
 
 3. Що написано у картці моделі про рекомендовану метрику схожості? Чому це важливо при створенні індексу?
 
-Для моделей сімейства Sentence Transformers рекомендованою метрикою оцінки відстані є Cosine Similarity. Це критично важливо при створенні індексу в Pinecone: база даних повинна шукати найближчі вектори за тією ж математичною формулою, за якою модель оптимізували під час тренування, інакше результати пошуку будуть повністю нерелевантними.
+    Для моделей сімейства Sentence Transformers рекомендованою метрикою оцінки відстані є Cosine Similarity. Це критично важливо при створенні індексу в Pinecone: база даних повинна шукати найближчі вектори за тією ж математичною формулою, за якою модель оптимізували під час тренування, інакше результати пошуку будуть повністю нерелевантними.
 
 #### 1.3 Отримання ембеддингів
 
