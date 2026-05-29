@@ -53,3 +53,57 @@ $\text{Cosine Similarity} = \frac{a \cdot b}{1} = a \cdot b = \text{Dot Product}
 - Фільтр A ($>= 2019$, `cs.LG`): Видача фокусується на сучасних досягненнях у машинному навчанні, оскільки ми жорстко обмежили категорію `cs.LG` і взяли свіжі роки. Фільтр А не повернув результатів, оскільки з метою економії оперативної пам'яті датасет не перемішувався (читалися перші 10 000 рядків хронологічного файлу, що дало лише статті 2007-2008 років). Фільтр відпрацював коректно і відкинув нерелевантні дані.
 
 - Фільтр B ($< 2015$): Видача показує фундаментальні, старіші підходи. Оскільки ми не обмежували категорію, пошуковик знайшов застосування концепцій навчання з підкріпленням у суміжних сферах: `physics.soc-ph`, `cs.MA`, які були популярні до буму глибокого навчання.
+
+1. *Чи збігаються топ-5 для cosine і dot product і чому?*
+
+    Так, збігаються. Оскільки ембеддинги нормалізовані, знаменник у формулі косинусної схожості зникає(довжини нормалызованих векторыв = 1) => математично скорочується до скалярного добутку(dot product).
+
+    ```
+    -----------------------------------
+    Local Results: Top 5 Dot Product Results
+    -----------------------------------
+    Top_1: Capturing knots in polymers
+    Year: 2007 | Category: cond-mat.soft
+    Abstarct: This paper visualizes a knot reduction algorithm...
+
+    Top_2: Symbolic sensors : one solution to the numerical-symbolic interface
+    Year: 2007 | Category: physics.ins-det
+    Abstarct: This paper introduces the concept of symbolic sensor as an extension of the
+    smart sensor one. Then, the links between th...
+
+
+    -----------------------------------
+    Local Results: Top 5 Cosine Results
+    -----------------------------------
+    Top_1: Capturing knots in polymers
+    Year: 2007 | Category: cond-mat.soft
+    Abstarct: This paper visualizes a knot reduction algorithm...
+
+    Top_2: Symbolic sensors : one solution to the numerical-symbolic interface
+    Year: 2007 | Category: physics.ins-det
+    Abstarct: This paper introduces the concept of symbolic sensor as an extension of the
+    smart sensor one. Then, the links between th...
+    
+    ```
+    
+2. *Чи відрізняються результати для L2 і чому?*
+    
+    Топ-5 статей будуть ідентичними, але для L2 сортування йде за зростанням (шукаємо мінімум відстані). Для нормалізованих векторів ці метрики жорстко пов'язані: $L2^2 = 2 - 2 \times \text{Cosine}$. Тому мінімізація L2 дорівнює максимізації Cosine.
+
+    ```
+    -----------------------------------
+    Local Results: Top 5 L2 Results
+    -----------------------------------
+    Top_1: Capturing knots in polymers
+    Year: 2007 | Category: cond-mat.soft
+    Abstarct: This paper visualizes a knot reduction algorithm...
+
+    Top_2: Symbolic sensors : one solution to the numerical-symbolic interface
+    Year: 2007 | Category: physics.ins-det
+    Abstarct: This paper introduces the concept of symbolic sensor as an extension of the
+    smart sensor one. Then, the links between th...
+    ```
+
+3. *Що сталося б, якби ембеддинги не були нормалізовані?*
+
+    Топ-5 для кожної метрики був би різним. Dot Product залежав би від довжини вектора. Cosine ігнорував би довжину і рахував лише кут, а L2 вимірював би абсолютну відстань між точками.
