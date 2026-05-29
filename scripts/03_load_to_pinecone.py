@@ -1,3 +1,4 @@
+# scripts/03_load_to_pinecone.py
 import os
 import numpy as np
 import pandas as pd
