@@ -4,6 +4,34 @@
 
 ## Configuration
 
+### 1. Environment Variables
+    Create a `.env` file in the project root:
+
+    ```env
+    PINECONE_API_KEY=your_api_key_here
+    ```
+
+### 2. Docker Execution
+
+Build and run the container in the background
+
+    ```
+    docker compose up -d --build
+
+    # Access the container shell
+    docker compose exec python_app bash
+    
+    ```
+
+### 3. Pipeline Steps
+
+    ```
+    python scripts/01_prepare_data.py       # 1. Parse JSON and create Parquet subset
+    python scripts/02_embed.py              # 2. Generate normalized embeddings (specter2_base)
+    python scripts/03_load_to_pinecone.py   # 3. Create index and upsert batches to Pinecone
+    python scripts/04_search.py             # 4. Semantic search and local metric calculations
+    ```
+
 ## Part 1
 
 #### 1.2 Вибір інструментів
