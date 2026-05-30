@@ -82,57 +82,169 @@ $\text{Cosine Similarity} = \frac{a \cdot b}{1} = a \cdot b = \text{Dot Product}
 
 - Фільтр B ($< 2015$): Видача показує фундаментальні, старіші підходи. Оскільки ми не обмежували категорію, пошуковик знайшов застосування концепцій навчання з підкріпленням у суміжних сферах: `physics.soc-ph`, `cs.MA`, які були популярні до буму глибокого навчання.
 
+#### Terminal Output
+
+```
+docker exec -it sheremet_nosql_2 python scripts/04_search.py
+
+-----------------------------------
+Pure Semantic Search Results:
+-----------------------------------
+Top_1: Capturing knots in polymers
+Year: 2007.0 | Category: cond-mat.soft
+Abstract: This paper visualizes a knot reduction algorithm...
+
+Top_2: Symbolic sensors : one solution to the numerical-symbolic interface
+Year: 2007.0 | Category: physics.ins-det
+Abstract: This paper introduces the concept of symbolic sensor as an extension of the
+smart sensor one. Then, the links between th...
+
+Top_3: The Mathematics
+Year: 2007.0 | Category: math.HO
+Abstract: This is an essay that considering the knowledge structure and language of a
+different nature, attempts to build on an ex...
+
+Top_4: Modeling the field of laser welding melt pool by RBFNN
+Year: 2007.0 | Category: physics.comp-ph
+Abstract: Efficient control of a laser welding process requires the reliable prediction
+of process behavior. A statistical method ...
+
+Top_5: Why should anyone care about computing with anyons?
+Year: 2007.0 | Category: quant-ph
+Abstract: In this article we present a pedagogical introduction of the main ideas and
+recent advances in the area of topological q...
+
+
+-----------------------------------
+Filter A: >= 2019 AND cs.LG
+-----------------------------------
+No Results Found.
+
+-----------------------------------
+Filter B: < 2015
+-----------------------------------
+Top_1: Multi-Agent Modeling Using Intelligent Agents in the Game of Lerpa
+Year: 2007.0 | Category: cs.MA
+Abstract: Game theory has many limitations implicit in its application. By utilizing
+multiagent modeling, it is possible to solve ...
+
+Top_2: Introduction to Phase Transitions in Random Optimization Problems
+Year: 2007.0 | Category: cond-mat.stat-mech
+Abstract: Notes of the lectures delivered in Les Houches during the Summer School on
+Complex Systems (July 2006)....
+
+Top_3: Architecture for Pseudo Acausal Evolvable Embedded Systems
+Year: 2007.0 | Category: cs.NE
+Abstract: Advances in semiconductor technology are contributing to the increasing
+complexity in the design of embedded systems. Ar...
+
+Top_4: Why only few are so successful ?
+Year: 2007.0 | Category: physics.pop-ph
+Abstract: In many professons employees are rewarded according to their relative
+performance. Corresponding economy can be modeled ...
+
+Top_5: Opinion Dynamics and Sociophysics
+Year: 2007.0 | Category: physics.soc-ph
+Abstract: No abstract given. Contents:
+  I. Definition and Introduction
+  II. Schelling Model
+  III. Opinion Dynamics
+  IV. Langua...
+
+
+-----------------------------------
+Local Results: Top 5 Dot Product Results
+-----------------------------------
+Top_1: Capturing knots in polymers
+Year: 2007 | Category: cond-mat.soft
+Abstarct: This paper visualizes a knot reduction algorithm...
+
+Top_2: Symbolic sensors : one solution to the numerical-symbolic interface
+Year: 2007 | Category: physics.ins-det
+Abstarct: This paper introduces the concept of symbolic sensor as an extension of the
+smart sensor one. Then, the links between th...
+
+Top_3: The Mathematics
+Year: 2007 | Category: math.HO
+Abstarct: This is an essay that considering the knowledge structure and language of a
+different nature, attempts to build on an ex...
+
+Top_4: Modeling the field of laser welding melt pool by RBFNN
+Year: 2007 | Category: physics.comp-ph
+Abstarct: Efficient control of a laser welding process requires the reliable prediction
+of process behavior. A statistical method ...
+
+Top_5: Python for Education: Computational Methods for Nonlinear Systems
+Year: 2007 | Category: nlin.CD
+Abstarct: We describe a novel, interdisciplinary, computational methods course that
+uses Python and associated numerical and visua...
+
+
+-----------------------------------
+Local Results: Top 5 Cosine Results
+-----------------------------------
+Top_1: Capturing knots in polymers
+Year: 2007 | Category: cond-mat.soft
+Abstarct: This paper visualizes a knot reduction algorithm...
+
+Top_2: Symbolic sensors : one solution to the numerical-symbolic interface
+Year: 2007 | Category: physics.ins-det
+Abstarct: This paper introduces the concept of symbolic sensor as an extension of the
+smart sensor one. Then, the links between th...
+
+Top_3: The Mathematics
+Year: 2007 | Category: math.HO
+Abstarct: This is an essay that considering the knowledge structure and language of a
+different nature, attempts to build on an ex...
+
+Top_4: Modeling the field of laser welding melt pool by RBFNN
+Year: 2007 | Category: physics.comp-ph
+Abstarct: Efficient control of a laser welding process requires the reliable prediction
+of process behavior. A statistical method ...
+
+Top_5: Python for Education: Computational Methods for Nonlinear Systems
+Year: 2007 | Category: nlin.CD
+Abstarct: We describe a novel, interdisciplinary, computational methods course that
+uses Python and associated numerical and visua...
+
+
+-----------------------------------
+Local Results: Top 5 L2 Results
+-----------------------------------
+Top_1: Capturing knots in polymers
+Year: 2007 | Category: cond-mat.soft
+Abstarct: This paper visualizes a knot reduction algorithm...
+
+Top_2: Symbolic sensors : one solution to the numerical-symbolic interface
+Year: 2007 | Category: physics.ins-det
+Abstarct: This paper introduces the concept of symbolic sensor as an extension of the
+smart sensor one. Then, the links between th...
+
+Top_3: The Mathematics
+Year: 2007 | Category: math.HO
+Abstarct: This is an essay that considering the knowledge structure and language of a
+different nature, attempts to build on an ex...
+
+Top_4: Modeling the field of laser welding melt pool by RBFNN
+Year: 2007 | Category: physics.comp-ph
+Abstarct: Efficient control of a laser welding process requires the reliable prediction
+of process behavior. A statistical method ...
+
+Top_5: Python for Education: Computational Methods for Nonlinear Systems
+Year: 2007 | Category: nlin.CD
+Abstarct: We describe a novel, interdisciplinary, computational methods course that
+uses Python and associated numerical and visua...
+```
+
 #### Theoretical Questions:
 
 1. *Чи збігаються топ-5 для cosine і dot product і чому?*
 
     Так, збігаються. Оскільки ембеддинги нормалізовані, знаменник у формулі косинусної схожості зникає(довжини нормалызованих векторыв = 1) => математично скорочується до скалярного добутку(dot product).
-
-    ```
-    -----------------------------------
-    Local Results: Top 5 Dot Product Results
-    -----------------------------------
-    Top_1: Capturing knots in polymers
-    Year: 2007 | Category: cond-mat.soft
-    Abstarct: This paper visualizes a knot reduction algorithm...
-
-    Top_2: Symbolic sensors : one solution to the numerical-symbolic interface
-    Year: 2007 | Category: physics.ins-det
-    Abstarct: This paper introduces the concept of symbolic sensor as an extension of the
-    smart sensor one. Then, the links between th...
-
-
-    -----------------------------------
-    Local Results: Top 5 Cosine Results
-    -----------------------------------
-    Top_1: Capturing knots in polymers
-    Year: 2007 | Category: cond-mat.soft
-    Abstarct: This paper visualizes a knot reduction algorithm...
-
-    Top_2: Symbolic sensors : one solution to the numerical-symbolic interface
-    Year: 2007 | Category: physics.ins-det
-    Abstarct: This paper introduces the concept of symbolic sensor as an extension of the
-    smart sensor one. Then, the links between th...
-    
-    ```
     
 2. *Чи відрізняються результати для L2 і чому?*
     
     Топ-5 статей будуть ідентичними, але для L2 сортування йде за зростанням (шукаємо мінімум відстані). Для нормалізованих векторів ці метрики жорстко пов'язані: $L2^2 = 2 - 2 \times \text{Cosine}$. Тому мінімізація L2 дорівнює максимізації Cosine.
-
-    ```
-    -----------------------------------
-    Local Results: Top 5 L2 Results
-    -----------------------------------
-    Top_1: Capturing knots in polymers
-    Year: 2007 | Category: cond-mat.soft
-    Abstarct: This paper visualizes a knot reduction algorithm...
-
-    Top_2: Symbolic sensors : one solution to the numerical-symbolic interface
-    Year: 2007 | Category: physics.ins-det
-    Abstarct: This paper introduces the concept of symbolic sensor as an extension of the
-    smart sensor one. Then, the links between th...
-    ```
 
 3. *Що сталося б, якби ембеддинги не були нормалізовані?*
 
@@ -146,7 +258,6 @@ $\text{Cosine Similarity} = \frac{a \cdot b}{1} = a \cdot b = \text{Dot Product}
 ```
 docker exec -it sheremet_nosql_2 python scripts/05_chunking.py
 
-No sentence-transformers model found with name allenai/specter2_base. Creating a new one with mean pooling.
 Chunking (fixed): 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 30/30 [00:03<00:00,  8.04it/s]
 Upserting: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:01<00:00,  1.12s/it]
 Chunking (semantic): 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 30/30 [00:09<00:00,  3.26it/s]
