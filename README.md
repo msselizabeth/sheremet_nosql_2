@@ -258,11 +258,14 @@ uses Python and associated numerical and visua...
 ```
 docker exec -it sheremet_nosql_2 python scripts/05_chunking.py
 
-Chunking (fixed): 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 30/30 [00:03<00:00,  8.04it/s]
-Upserting: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:01<00:00,  1.12s/it]
-Chunking (semantic): 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 30/30 [00:09<00:00,  3.26it/s]
-Upserting: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.58it/s]
+Chunking (fixed): 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 30/30 [00:03<00:00,  8.53it/s]
+Upserting: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:01<00:00,  1.10s/it]
+Chunking (semantic): 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 30/30 [00:07<00:00,  3.90it/s]
+Upserting: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.11it/s]
 
+--------------------------------------------------
+Results from 'arxiv-chunks-fixed' for: 'deep neural networks architecture'
+--------------------------------------------------
 Top 1 | Paper: Absolute Calibration and Characterization of the Multiband Imaging
   Photometer for Spitzer. II. 70 micron Imaging | Chunk #3.0
 Text: validates the MIPS 70 micron operating strategy, especially the use of frequent
@@ -287,6 +290,10 @@ Top 5 | Paper: Dependence of CMI Growth Rates on Electron Velocity Distributions
 Text: result in a gain enhancement more than 40 dB depending on the convective growth
 length within the structure. Similar enhancements may be caused by EMI...
 
+
+--------------------------------------------------
+Results from 'arxiv-chunks-semantic' for: 'deep neural networks architecture'
+--------------------------------------------------
 Top 1 | Paper: The Kinematics of the Ultra-Faint Milky Way Satellites: Solving the
   Missing Satellite Problem | Chunk #1.0
 Text: [slightly abridged]....
@@ -305,6 +312,10 @@ Text: New information on short/hard gamma-ray bursts (GRBs) is being gathered th
 Top 5 | Paper: A model for the Globular Cluster extreme anomalies | Chunk #0.0
 Text: In spite of the efforts made in the latest years, still there is no comprehensive explanation for the chemical anomalies of globular cluster stars. Am...
 
+
+--------------------------------------------------
+Results from 'arxiv-chunks-fixed' for: 'statistical mechanics and algorithms'
+--------------------------------------------------
 Top 1 | Paper: Spin Effects in Quantum Chromodynamics and Recurrence Lattices with
   Multi-Site Exchanges | Chunk #0.0
 Text: In this thesis, we consider some spin effects in QCD and recurrence lattices
@@ -330,24 +341,28 @@ Top 5 | Paper: The Origin of the Galaxy Mass-Metallicity Relation and Implicatio
 Text: reflects the mass scale where MLF~1, rather than a characteristic wind speed.
 The tight observed MZR scatter is ensured when t_d<1 dynamical time, whi...
 
+
+--------------------------------------------------
+Results from 'arxiv-chunks-semantic' for: 'statistical mechanics and algorithms'
+--------------------------------------------------
 Top 1 | Paper: The Kinematics of the Ultra-Faint Milky Way Satellites: Solving the
   Missing Satellite Problem | Chunk #1.0
 Text: [slightly abridged]....
 
-Top 2 | Paper: The Boundary Conditions of the Heliosphere: Photoionization Models
+Top 2 | Paper: Spin Effects in Quantum Chromodynamics and Recurrence Lattices with
+  Multi-Site Exchanges | Chunk #0.0
+Text: In this thesis, we consider some spin effects in QCD and recurrence lattices with multi-site exchanges. Main topic of our manuscript are critical phen...
+
+Top 3 | Paper: The Boundary Conditions of the Heliosphere: Photoionization Models
   Constrained by Interstellar and In Situ Data | Chunk #1.0
 Text: 23 - 0. 27 cm^-3, T = 6300 K, X(H^+) ~ 0. 2, and X(He^+) ~ 0. 4. These results appear to be robust since acceptable models are found for substantially...
 
-Top 3 | Paper: Multicolor observations of the afterglow of the short/hard GRB 050724 | Chunk #0.0
+Top 4 | Paper: Multicolor observations of the afterglow of the short/hard GRB 050724 | Chunk #0.0
 Text: New information on short/hard gamma-ray bursts (GRBs) is being gathered thanks to the discovery of their optical and X-ray afterglows. However, some k...
 
-Top 4 | Paper: High energy afterglows and flares from Gamma-Ray Burst by Inverse
+Top 5 | Paper: High energy afterglows and flares from Gamma-Ray Burst by Inverse
   Compton emission | Chunk #0.0
 Text: We perform a detailed study of inverse Compton (IC) emission for a fireball undergoing external shock (ES) in either a uniform or a wind-like interste...
-
-Top 5 | Paper: Spin Effects in Quantum Chromodynamics and Recurrence Lattices with
-  Multi-Site Exchanges | Chunk #0.0
-Text: In this thesis, we consider some spin effects in QCD and recurrence lattices with multi-site exchanges. Main topic of our manuscript are critical phen...
 
 ```
 
