@@ -34,6 +34,48 @@ Build and run the container in the background
 
 ## Part 1
 
+#### Terminal Output 01_prepare_data.py
+
+```
+docker exec -it sheremet_nosql_2 python scripts/01_prepare_data.py
+
+Читаємо датасет: 10000it [00:00, 178517.48it/s]
+\nЗавантажено статей:10000
+\nРозподіл за категоріями (топ-10):
+category
+astro-ph              1838
+hep-th                 680
+hep-ph                 671
+quant-ph               564
+gr-qc                  350
+cond-mat.mes-hall      307
+cond-mat.str-el        292
+cond-mat.mtrl-sci      291
+cond-mat.stat-mech     271
+math.AG                209
+Name: count, dtype: int64
+\nРозподіл за роками:
+year
+2007    10000
+Name: count, dtype: int64
+
+\nПриклад запису:
+{'id': '0704.0001', 'title': 'Calculation of prompt diphoton production cross sections at Tevatron and\n  LHC energies', 'abstract': 'A fully differential calculation in perturbative quantum chromodynamics is\npresented for the production of massive photon pairs at hadron colliders. All\nnext-to-leading order perturbative contributions from quark-antiquark,\ngluon-(anti)quark, and gluon-gluon subprocesses are included, as well as\nall-orders resummation of initial-state gluon radiation valid at\nnext-to-next-to-leading logarithmic accuracy. The region of phase space is\nspecified in which the calculation is most reliable. Good agreement is\ndemonstrated with data from the Fermilab Tevatron, and predictions are made for\nmore detailed tests with CDF and DO data. Predictions are shown for\ndistributions of diphoton pairs produced at the energy of the Large Hadron\nCollider (LHC). Distributions of the diphoton pairs from the decay of a Higgs\nboson are contrasted with those produced from QCD processes at the LHC, showing\nthat enhanced sensitivity to the signal can be obtained with judicious\nselection of events.', 'authors': 'BalázsC., BergerE. L., NadolskyP. M., YuanC. -P.', 'year': 2007, 'category': 'hep-ph'}
+
+\nЗбережено вdata/arxiv_subset.parquet
+```
+
+#### Terminal Output 02_embed.py
+```
+docker exec -it sheremet_nosql_2 python scripts/02_embed.py
+
+Batches: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 157/157 [09:26<00:00,  3.61s/it]
+
+Total number of processed texts: 10000
+The dimensions of the embeddings array: (10000, 768)
+L2 norm of the first embedding: 1.0000
+```
+
 #### 1.2 Вибір інструментів
 
 1. Чим Pinecone відрізняється від Qdrant і Chroma за моделлю розгортання, ліцензією і продуктивністю? У якому сценарії ви б обрали кожен із них?
@@ -68,7 +110,9 @@ $\text{Cosine Similarity} = \frac{a \cdot b}{1} = a \cdot b = \text{Dot Product}
 
 Тому для нормалізованих векторів ці дві метрики стають математично ідентичними. Вигідніше використовувати саме Dot Product для одиничних векторів, оскільки це економить обчислювальні ресурси бази даних на непотрібних операціях ділення.
 
-## Part 2(Pinecone Screenshot)
+## Part 2 
+
+#### Terminal Outpur 03_load_to_pinecone.py
 
 ![Pinecone Results](./Pincecone_Index.png)
 
@@ -82,7 +126,7 @@ $\text{Cosine Similarity} = \frac{a \cdot b}{1} = a \cdot b = \text{Dot Product}
 
 - Фільтр B ($< 2015$): Видача показує фундаментальні, старіші підходи. Оскільки ми не обмежували категорію, пошуковик знайшов застосування концепцій навчання з підкріпленням у суміжних сферах: `physics.soc-ph`, `cs.MA`, які були популярні до буму глибокого навчання.
 
-#### Terminal Output
+#### Terminal Output 04_search.py
 
 ```
 docker exec -it sheremet_nosql_2 python scripts/04_search.py
@@ -253,7 +297,7 @@ uses Python and associated numerical and visua...
 
 ### Part 4 Chunking
 
-#### Terminal Output
+#### Terminal Output 05_chunking.py
 
 ```
 docker exec -it sheremet_nosql_2 python scripts/05_chunking.py
