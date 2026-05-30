@@ -141,10 +141,12 @@ def process_and_upload(
         index.upsert(vectors=batch)
 
 
-def search_chunks(index, query: str, model: SentenceTransformer, top_k: int = 5):
+def search_chunks(index, index_name: str, query: str, model: SentenceTransformer, top_k: int = 5):
     """
     Queries the Pinecone index and prints results.
     """
+
+    print(f"\n{'-'*50}\nResults from '{index_name}' for: '{query}'\n{'-'*50}")
 
     # Encode query and convert to list for Pinecone
     query_embed = model.encode(query, normalize_embeddings=True).tolist()
@@ -179,7 +181,7 @@ def main():
     top_30_papers = df.nlargest(30, "abstract_len").copy().reset_index(drop=True)
 
     # ---------------------------------------------------------
-    # STEP 2 & 3 & 4 & 5: Index Setup and Chunk Ingestion
+    # Index Setup and Chunk Ingestion
     # ---------------------------------------------------------
     # Initialize indecies
     init_pinecone_index(pc, INDEX_FIXED)
@@ -201,8 +203,8 @@ def main():
     ]
 
     for query in test_queries:
-        search_chunks(fixed_index, query, model)
-        search_chunks(semantic_index, query, model)
+        search_chunks(fixed_index, INDEX_FIXED, query, model)
+        search_chunks(semantic_index, INDEX_SEMANTIC, query, model)
 
 
 if __name__ == "__main__":
