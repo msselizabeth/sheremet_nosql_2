@@ -137,3 +137,119 @@ $\text{Cosine Similarity} = \frac{a \cdot b}{1} = a \cdot b = \text{Dot Product}
 3. *Що сталося б, якби ембеддинги не були нормалізовані?*
 
     Топ-5 для кожної метрики був би різним. Dot Product залежав би від довжини вектора. Cosine ігнорував би довжину і рахував лише кут, а L2 вимірював би абсолютну відстань між точками.
+
+
+### Part 4 Chunking
+
+#### Terminal Output
+
+```
+docker exec -it sheremet_nosql_2 python scripts/05_chunking.py
+
+No sentence-transformers model found with name allenai/specter2_base. Creating a new one with mean pooling.
+Chunking (fixed): 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 30/30 [00:03<00:00,  8.04it/s]
+Upserting: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:01<00:00,  1.12s/it]
+Chunking (semantic): 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 30/30 [00:09<00:00,  3.26it/s]
+Upserting: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  1.58it/s]
+
+Top 1 | Paper: Absolute Calibration and Characterization of the Multiband Imaging
+  Photometer for Spitzer. II. 70 micron Imaging | Chunk #3.0
+Text: validates the MIPS 70 micron operating strategy, especially the use of frequent
+stimulator flashes to track the changing responsivities of the Ge:Ga d...
+
+Top 2 | Paper: Is Modified Gravity Required by Observations? An Empirical Consistency
+  Test of Dark Energy Models | Chunk #3.0
+Text: data already. We find w(grow) < -0.80 at 2 sigma. As an example, the best-fit
+flat Dvali-Gabadadze-Porrati (DGP) model approximated by our parametriza...
+
+Top 3 | Paper: Improved constraints on dark energy from Chandra X-ray observations of
+  the largest relaxed galaxy clusters | Chunk #3.0
+Text: constant paradigm. Our analysis includes conservative allowances for systematic
+uncertainties. The small systematic scatter and tight constraints bode...
+
+Top 4 | Paper: Multicolor observations of the afterglow of the short/hard GRB 050724 | Chunk #3.0
+Text: compelling case for association between a short burst and a galaxy with old
+stellar population. It thus plays a pivotal role in constraining progenito...
+
+Top 5 | Paper: Dependence of CMI Growth Rates on Electron Velocity Distributions and
+  Perturbation by Solitary Waves | Chunk #3.0
+Text: result in a gain enhancement more than 40 dB depending on the convective growth
+length within the structure. Similar enhancements may be caused by EMI...
+
+Top 1 | Paper: The Kinematics of the Ultra-Faint Milky Way Satellites: Solving the
+  Missing Satellite Problem | Chunk #1.0
+Text: [slightly abridged]....
+
+Top 2 | Paper: Spin Effects in Quantum Chromodynamics and Recurrence Lattices with
+  Multi-Site Exchanges | Chunk #0.0
+Text: In this thesis, we consider some spin effects in QCD and recurrence lattices with multi-site exchanges. Main topic of our manuscript are critical phen...
+
+Top 3 | Paper: The Boundary Conditions of the Heliosphere: Photoionization Models
+  Constrained by Interstellar and In Situ Data | Chunk #1.0
+Text: 23 - 0. 27 cm^-3, T = 6300 K, X(H^+) ~ 0. 2, and X(He^+) ~ 0. 4. These results appear to be robust since acceptable models are found for substantially...
+
+Top 4 | Paper: Multicolor observations of the afterglow of the short/hard GRB 050724 | Chunk #0.0
+Text: New information on short/hard gamma-ray bursts (GRBs) is being gathered thanks to the discovery of their optical and X-ray afterglows. However, some k...
+
+Top 5 | Paper: A model for the Globular Cluster extreme anomalies | Chunk #0.0
+Text: In spite of the efforts made in the latest years, still there is no comprehensive explanation for the chemical anomalies of globular cluster stars. Am...
+
+Top 1 | Paper: Spin Effects in Quantum Chromodynamics and Recurrence Lattices with
+  Multi-Site Exchanges | Chunk #0.0
+Text: In this thesis, we consider some spin effects in QCD and recurrence lattices
+with multi-site exchanges. Main topic of our manuscript are critical phen...
+
+Top 2 | Paper: Improved constraints on dark energy from Chandra X-ray observations of
+  the largest relaxed galaxy clusters | Chunk #3.0
+Text: constant paradigm. Our analysis includes conservative allowances for systematic
+uncertainties. The small systematic scatter and tight constraints bode...
+
+Top 3 | Paper: Absolute Calibration and Characterization of the Multiband Imaging
+  Photometer for Spitzer. II. 70 micron Imaging | Chunk #3.0
+Text: validates the MIPS 70 micron operating strategy, especially the use of frequent
+stimulator flashes to track the changing responsivities of the Ge:Ga d...
+
+Top 4 | Paper: Is Modified Gravity Required by Observations? An Empirical Consistency
+  Test of Dark Energy Models | Chunk #3.0
+Text: data already. We find w(grow) < -0.80 at 2 sigma. As an example, the best-fit
+flat Dvali-Gabadadze-Porrati (DGP) model approximated by our parametriza...
+
+Top 5 | Paper: The Origin of the Galaxy Mass-Metallicity Relation and Implications for
+  Galactic Outflows | Chunk #3.0
+Text: reflects the mass scale where MLF~1, rather than a characteristic wind speed.
+The tight observed MZR scatter is ensured when t_d<1 dynamical time, whi...
+
+Top 1 | Paper: The Kinematics of the Ultra-Faint Milky Way Satellites: Solving the
+  Missing Satellite Problem | Chunk #1.0
+Text: [slightly abridged]....
+
+Top 2 | Paper: The Boundary Conditions of the Heliosphere: Photoionization Models
+  Constrained by Interstellar and In Situ Data | Chunk #1.0
+Text: 23 - 0. 27 cm^-3, T = 6300 K, X(H^+) ~ 0. 2, and X(He^+) ~ 0. 4. These results appear to be robust since acceptable models are found for substantially...
+
+Top 3 | Paper: Multicolor observations of the afterglow of the short/hard GRB 050724 | Chunk #0.0
+Text: New information on short/hard gamma-ray bursts (GRBs) is being gathered thanks to the discovery of their optical and X-ray afterglows. However, some k...
+
+Top 4 | Paper: High energy afterglows and flares from Gamma-Ray Burst by Inverse
+  Compton emission | Chunk #0.0
+Text: We perform a detailed study of inverse Compton (IC) emission for a fireball undergoing external shock (ES) in either a uniform or a wind-like interste...
+
+Top 5 | Paper: Spin Effects in Quantum Chromodynamics and Recurrence Lattices with
+  Multi-Site Exchanges | Chunk #0.0
+Text: In this thesis, we consider some spin effects in QCD and recurrence lattices with multi-site exchanges. Main topic of our manuscript are critical phen...
+
+```
+
+#### Theoretical Questions
+
+*1. Яка стратегія дає більш осмислені чанки?*
+
+Більш грунтовні результати дає **Semantic chunking**. Fixed-size нарізає текст *"наосліп"* за кількістю слів, що часто призводить до обриву логіки. Семантичний підхід розбиває текст на рівні цілих речень і об'єднує їх лише доти, поки вони зберігають високу косинусну схожість. Це гарантує, що один чанк містить одну завершену думку.
+
+*2. Чи є випадки розрізаних речень і як це впливає на ембеддинги?*
+
+При використанні `Fixed-size chunking` розрізані речення трапляються регулярно. Це критично погіршує якість ембеддингів: якщо алгоритм розділить складний термін навпіл, модель згенерує два окремих вектори, жоден з яких не міститиме повного змісту. В результаті такий чанк може просто не знайтися за релевантним запитом. У `Semantic chunking` таких випадків немає, оскільки спліттер базується на розділових знаках.
+
+*3. Як розмір overlap впливає на кількість чанків і покриття тексту?*
+
+Чим більший `overlap`, тим менший крок зсуву вікна (sliding window), відповідно, **більша загальна кількість чанків**, що збільшує витрати на зберігання у векторній БД. Проте великий overlap покращує покриття тексту: він гарантує, що важливий контекст, який знаходиться на межі двох фрагментів, не буде втрачено, і LLM отримає цілісну картину для формування відповіді.
