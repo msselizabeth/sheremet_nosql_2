@@ -7,3 +7,4 @@ numpy==1.26.4
 tqdm==4.66.4
 pyarrow==23.0.1
 python-dotenv==1.0.1
+langchain_text_splitters
