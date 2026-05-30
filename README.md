@@ -435,51 +435,50 @@ Text: We perform a detailed study of inverse Compton (IC) emission for a firebal
 
 #### Console Output 06_hybrid_search.py
 
-```
-Evaluating query: 'BERT fine-tuning'
-| Rank | BM25 | Pinecone | RRF |
-|---|---|---|---|
-| 1 | The NMSSM Solution to the Fine-Tuning Problem, Precision Ele... | Misere quotients for impartial games: Supplementary material | The NMSSM Solution to the Fine-Tuning Problem, Precision Electroweak
-  Constraints and the Largest LEP Higgs Event Excess *(Score: 0.0164)* |
-| 2 | Fine-Tuning in Brane-antibrane Inflation | Introduction to Phase Transitions in Random Optimization Pro... | Misere quotients for impartial games: Supplementary material *(Score: 0.0164)* |
-| 3 | Conformal dynamics in gauge theories via non-perturbative
-  ... | Abstract Convexity and Cone-Vexing Abstractions | Fine-Tuning in Brane-antibrane Inflation *(Score: 0.0161)* |
-| 4 | Inverse Monte-Carlo determination of effective lattice model... | The Compositions of the Differential Operations and Gateaux ... | Introduction to Phase Transitions in Random Optimization Problems *(Score: 0.0161)* |
-| 5 | Eternal Inflation is "Expensive" | Experimental local realism tests without fair sampling assum... | Conformal dynamics in gauge theories via non-perturbative
-  renormalization group *(Score: 0.0159)* |
+**Evaluating query: 'BERT fine-tuning'**
 
-Evaluating query: 'Yann LeCun convolutional networks'
-| Rank | BM25 | Pinecone | RRF |
-|---|---|---|---|
-| 1 | On Punctured Pragmatic Space-Time Codes in Block Fading Chan... | Multilayer Perceptron with Functional Inputs: an Inverse Reg... | Optimization in Gradient Networks *(Score: 0.0303)* |
-| 2 | Trellis-Coded Quantization Based on Maximum-Hamming-Distance... | The Netsukuku network topology | On Punctured Pragmatic Space-Time Codes in Block Fading Channel *(Score: 0.0164)* |
-| 3 | Response of degree-correlated scale-free networks to stimuli | The Compositions of the Differential Operations and Gateaux ... | Multilayer Perceptron with Functional Inputs: an Inverse Regression
-  Approach *(Score: 0.0164)* |
-| 4 | Numerical evaluation of the upper critical dimension of perc... | Modeling the field of laser welding melt pool by RBFNN | Trellis-Coded Quantization Based on Maximum-Hamming-Distance Binary
-  Codes *(Score: 0.0161)* |
-| 5 | On Automorphism Groups of Networks | Adaptive classification of temporal signals in fixed-weights... | The Netsukuku network topology *(Score: 0.0161)* |
+| *Rank* | *BM25* | *Pinecone* | *RRF* |
+| ----- | ----- | ----- | ----- |
+| 1 | The NMSSM Solution to the Fine-Tuning Problem, Precision Electroweak Constraints and the Largest LEP Higgs Event Excess | Misere quotients for impartial games: Supplementary material | The NMSSM Solution to the Fine-Tuning Problem, Precision Electroweak Constraints and the Largest LEP Higgs Event Excess *(Score: 0.0164)* |
+| 2 | Fine-Tuning in Brane-antibrane Inflation | Introduction to Phase Transitions in Random Optimization Problems | Misere quotients for impartial games: Supplementary material *(Score: 0.0164)* |
+| 3 | Conformal dynamics in gauge theories via non-perturbative renormalization group | Abstract Convexity and Cone-Vexing Abstractions | Fine-Tuning in Brane-antibrane Inflation *(Score: 0.0161)* |
+| 4 | Inverse Monte-Carlo determination of effective lattice models for SU(3) Yang-Mills theory at finite temperature | The Compositions of the Differential Operations and Gateaux Directional Derivative | Introduction to Phase Transitions in Random Optimization Problems *(Score: 0.0161)* |
+| 5 | Eternal Inflation is "Expensive" | Experimental local realism tests without fair sampling assumption | Conformal dynamics in gauge theories via non-perturbative renormalization group *(Score: 0.0159)* |
 
-Evaluating query: 'making computers understand human emotions from text'
-| Rank | BM25 | Pinecone | RRF |
-|---|---|---|---|
+**Evaluating query: 'Yann LeCun convolutional networks'**
+
+| *Rank* | *BM25* | *Pinecone* | *RRF* |
+| ----- | ----- | ----- | ----- |
+| 1 | On Punctured Pragmatic Space-Time Codes in Block Fading Channel | Multilayer Perceptron with Functional Inputs: an Inverse Regression Approach | Optimization in Gradient Networks *(Score: 0.0303)* |
+| 2 | Trellis-Coded Quantization Based on Maximum-Hamming-Distance Binary Codes | The Netsukuku network topology | On Punctured Pragmatic Space-Time Codes in Block Fading Channel *(Score: 0.0164)* |
+| 3 | Response of degree-correlated scale-free networks to stimuli | The Compositions of the Differential Operations and Gateaux Directional Derivative | Multilayer Perceptron with Functional Inputs: an Inverse Regression Approach *(Score: 0.0164)* |
+| 4 | Numerical evaluation of the upper critical dimension of percolation in scale-free networks | Modeling the field of laser welding melt pool by RBFNN | Trellis-Coded Quantization Based on Maximum-Hamming-Distance Binary Codes *(Score: 0.0161)* |
+| 5 | On Automorphism Groups of Networks | Adaptive classification of temporal signals in fixed-weights recurrent neural networks: an existence proof | The Netsukuku network topology *(Score: 0.0161)* |
+
+**Evaluating query: 'making computers understand human emotions from text'**
+
+| *Rank* | *BM25* | *Pinecone* | *RRF* |
+| ----- | ----- | ----- | ----- |
 | 1 | An Automated Evaluation Metric for Chinese Text Entry | Opinion Dynamics and Sociophysics | On the Development of Text Input Method - Lessons Learned *(Score: 0.0323)* |
 | 2 | On the Development of Text Input Method - Lessons Learned | On the Development of Text Input Method - Lessons Learned | An Automated Evaluation Metric for Chinese Text Entry *(Score: 0.0164)* |
 | 3 | Towards Understanding the Origin of Genetic Languages | Extracting the hierarchical organization of complex systems | Opinion Dynamics and Sociophysics *(Score: 0.0164)* |
 | 4 | Detecting anchoring in financial markets | Novelty and Collective Attention | Towards Understanding the Origin of Genetic Languages *(Score: 0.0159)* |
 | 5 | Database Manipulation on Quantum Computers | Narratives within immersive technologies | Extracting the hierarchical organization of complex systems *(Score: 0.0159)* |
 
-```
 
 #### Theoretical Questions
 
-1. Який метод дав кращий результат і чому?
+*1. Який метод дав кращий результат і чому?*
 
-Найкращий та найбільш збалансований результат дав гібридний пошук (RRF).Лексичний BM25 занадто буквально чіпляється за слова (наприклад, у запиті "BERT fine-tuning" він знайшов статті з фізики про "fine-tuning problem", проігнорувавши контекст машинного навчання). Векторний пошук краще вловлює контекст (наприклад, знайшов "Multilayer Perceptron" за запитом про нейромережі), але може "відлітати" в абстракції. Гібридний підхід компенсує недоліки обох: він піднімає в топ ті документи, які мають і точний збіг ключових слів, і високу семантичну спорідненість із запитом.
+  Найкращий та найбільш збалансований результат дав гібридний пошук (RRF).Лексичний BM25 занадто буквально чіпляється за слова (наприклад, у запиті "BERT fine-tuning" він знайшов статті з фізики про "fine-tuning problem", проігнорувавши контекст машинного навчання). Векторний пошук краще вловлює контекст (наприклад, знайшов "Multilayer Perceptron" за запитом 'Yann LeCun convolutional networks'), але може відлітати в абстракції. Гібридний підхід компенсує недоліки обох: він піднімає в топ ті документи, які мають і точний збіг ключових слів, і високу семантичну спорідненість із запитом.
 
-2. Чи є документи в топ-5 гібридного пошуку, яких немає в топ-5 окремих методів, і чому?
+*2. Чи є документи в топ-5 гібридного пошуку, яких немає в топ-5 окремих методів, і чому?*
 
-Так, це чітко видно у другому запиті ("Yann LeCun convolutional networks"). Документ "Optimization in Gradient Networks" посів 1 місце в гібридній видачі, хоча його немає в топ-5 ані лексичного, ані векторного пошуку.Це відбувається через математику RRF: документ, який посідає, наприклад, 6-те місце в обох списках, отримає більшу суму балів $\frac{1}{60 + 6} + \frac{1}{60 + 6}$, ніж документ, який був на 1-му місці в BM25, але на 100-му місці у векторній видачі. RRF "винагороджує" документи за стабільну релевантність в обох модальностях.
+  Так, це чітко видно у другому запиті—"Yann LeCun convolutional networks". Документ "Optimization in Gradient Networks" посів 1 місце в гібридній видачі, хоча його немає в топ-5 ані лексичного, ані векторного пошуку.Це відбувається через математику RRF: документ, який посідає, наприклад, 6-те місце в обох списках, отримає більшу суму балів ніж документ, який був на 1-му місці в BM25, але на якомусь 100-му місці у векторній видачі. 
 
-3. Як зміна параметра k в RRF впливає на видачу (наприклад, k=60 vs k=1)?
+*3. Як зміна параметра k в RRF впливає на видачу (наприклад, k=60 vs k=1)?*
 
-Параметр $k$ відповідає за згладжування (smoothing) рангів.При $k=60$ різниця в балах між 1-м і 2-м місцями дуже мала ($\frac{1}{61} \approx 0.0163$ проти $\frac{1}{62} \approx 0.0161$). Це змушує алгоритм шукати консенсус — перемагають документи, які є високо в обох списках.Якщо поставити $k=1$, різниця стане колосальною: 1-ше місце отримає $0.5$ бала, а 2-ге — $0.33$. У такому разі документ-лідер з одного списку майже завжди перебиватиме результати іншого, і гібридний пошук фактично перетвориться на диктатуру того методу, який видав екстремально високий скор, втративши сенс об'єднання.
+  Параметр $k$ відповідає за згладжування рангів. При $k=60$ різниця в балах між 1-м і 2-м місцями дуже мала. Перемагають документи, які є високо в обох списках. Якщо поставити $k=1$, різниця стане колосальною: 1-ше місце отримає $0.5$ бала, а 2-ге — $0.33$. У такому разі документ-лідер з одного списку майже завжди перебиватиме результати іншого, і гібридний пошук фактично видасть дуже високий скор при цьому втративши сенс.
+
+## Part 6
+
