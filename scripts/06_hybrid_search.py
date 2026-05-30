@@ -116,10 +116,6 @@ def main():
             h_idx, h_score = hybrid[i]
             t_hybrid = f"{df.iloc[h_idx]['title']} *(Score: {h_score:.4f})*"
             
-            # Keep the console table readable
-            t_bm25 = t_bm25[:60] + "..." if len(t_bm25) > 60 else t_bm25
-            t_dense = t_dense[:60] + "..." if len(t_dense) > 60 else t_dense
-            
             print(f"| {i+1} | {t_bm25} | {t_dense} | {t_hybrid} |")
 
 
