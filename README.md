@@ -113,6 +113,12 @@ $\text{Cosine Similarity} = \frac{a \cdot b}{1} = a \cdot b = \text{Dot Product}
 ## Part 2 
 
 #### Terminal Outpur 03_load_to_pinecone.py
+```
+docker exec -it sheremet_nosql_2 python scripts/03_load_to_pinecone.py
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 50/50 [01:05<00:00,  1.31s/it]
+
+Total vectors uploaded: 10000
+```
 
 ![Pinecone Results](./Pincecone_Index.png)
 
